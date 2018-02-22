@@ -40,7 +40,7 @@ namespace WpfApp3
             buttonEquals.Tag = Operator.Equals;
         }
 
-        public MainWindow()
+        public MainWindow()//gjhfjhf
         {
             InitializeComponent();
         }
