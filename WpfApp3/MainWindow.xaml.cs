@@ -28,7 +28,9 @@ namespace WpfApp3
         private Operator lastOperator = Operator.None;
         private decimal valueSoFar = 0;
         private bool numberHitSinceLastOperator = false;
-        private double mr;//Memory recall
+
+        private double a = 0;
+        private double b = 0;
 
 
         private void Window_Loaded_1(object sender, RoutedEventArgs e)
@@ -153,16 +155,6 @@ namespace WpfApp3
             textBoxDisplay.Clear();
         }
 
-        private void buttonMSign_Click(object sender, RoutedEventArgs e)
-        {
-            textBoxDisplay.Text = (Double.Parse(textBoxDisplay.Text)*-1).ToString();
-        }
-
-        private void buttonRoot_Click(object sender, RoutedEventArgs e)
-        {
-            textBoxDisplay.Text = Math.Sqrt(Double.Parse(textBoxDisplay.Text)).ToString();
-        }
-
         private void buttonBack_Click(object sender, RoutedEventArgs e)
         {
             String box = textBoxDisplay.Text;
@@ -175,28 +167,60 @@ namespace WpfApp3
         
         }
 
-        private void buttonMAdd_Click(object sender, RoutedEventArgs e)
+        private void buttonMSign_Click(object sender, RoutedEventArgs e)
         {
-            mr = double.Parse(textBoxDisplay.Text);
-            textBoxDisplay.Clear();
-        }
-
-        private void buttonMR_Click(object sender, RoutedEventArgs e)
-        {
-            if(mr != 0)//0 means no memory stored
-                textBoxDisplay.Text = mr.ToString();
-            numberHitSinceLastOperator = true;//This allows MR # to be used in operation
-        }
-
-        private void buttonMC_Click(object sender, RoutedEventArgs e)
-        {
-            mr = 0;
+            textBoxDisplay.Text = (Double.Parse(textBoxDisplay.Text) * -1).ToString();
         }
 
         private void buttonCE_Click(object sender, RoutedEventArgs e)
         {
+            textBoxA.Clear();
+            textBoxB.Clear();
+            textBoxC.Clear();
             textBoxDisplay.Clear();
-            mr = 0;//Memory recall method won't ever recall 0.
         }
+
+       
+
+        private void buttonSetA_Click(object sender, RoutedEventArgs e)
+        {
+            textBoxC.Clear();//Clear error message if a or b not set
+            if (textBoxDisplay.Text != "")
+            {
+                a = Convert.ToDouble(textBoxDisplay.Text);
+                textBoxA.Text = Convert.ToString(a);
+                textBoxDisplay.Clear();
+            }
+        }
+
+        private void buttonSetB_Click(object sender, RoutedEventArgs e)
+        {
+            textBoxC.Clear();
+            if (textBoxDisplay.Text != "")
+            {
+                b = Convert.ToDouble(textBoxDisplay.Text);
+                textBoxB.Text = Convert.ToString(b);
+                textBoxDisplay.Clear();
+            }
+        }
+
+        private void buttonGetC_Click(object sender, RoutedEventArgs e)
+        {
+            if(a < 0 || b < 0)
+            {
+                textBoxC.Text = "No neg";
+            }
+            else if (a == 0 || b == 0)
+            {
+                textBoxC.Text = "Set A & B";
+            }
+            else
+            {
+                textBoxC.Text = Convert.ToString(Math.Sqrt(a * a + b * b));
+            }
+            a = 0;
+            b = 0;
+        }
+
     }
 }

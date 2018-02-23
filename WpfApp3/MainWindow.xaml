@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="397.996" Width="453.908" WindowStyle="ThreeDBorderWindow" Background="#FFE60E0E" Foreground="#FF0A2BFF" Loaded="Window_Loaded_1">
+        Title="MainWindow" Height="453.996" Width="507.908" WindowStyle="ThreeDBorderWindow" Background="#FFE60E0E" Foreground="#FF0A2BFF" Loaded="Window_Loaded_1">
     <Grid Background="#FF175F9B">
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -34,31 +34,6 @@
         <TextBox Grid.Row="1" Grid.ColumnSpan="5" Margin="10 5"/>
         <TextBox Name = "textBoxDisplay" Grid.Row="1" 
                  Grid.ColumnSpan="5" Margin="10 5"/>
-        <Button Grid.Column="0" Grid.Row="2" Name="buttonMC" Click="buttonMC_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
-            <Button.Effect>
-                <DropShadowEffect ShadowDepth="2"/>
-            </Button.Effect> MC
-        </Button>
-        <Button Grid.Column="1" Grid.Row="2" Name="buttonMR" Click="buttonMR_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
-            <Button.Effect>
-                <DropShadowEffect ShadowDepth="2"/>
-            </Button.Effect> MR
-        </Button>
-        <Button Grid.Column="2" Grid.Row="2" Name="buttonMS" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
-            <Button.Effect>
-                <DropShadowEffect ShadowDepth="2"/>
-            </Button.Effect> MS
-        </Button>
-        <Button Grid.Column="3" Grid.Row="2" Name="buttonMAdd" Click="buttonMAdd_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
-            <Button.Effect>
-                <DropShadowEffect ShadowDepth="2"/>
-            </Button.Effect> M+
-        </Button>
-        <Button Grid.Column="4" Grid.Row="2" Name="buttonMSub" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
-            <Button.Effect>
-                <DropShadowEffect ShadowDepth="2"/>
-            </Button.Effect> M-
-        </Button>
         <Button Grid.Column="0" Grid.Row="3" Name="buttonBack" Click="buttonBack_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
@@ -74,15 +49,10 @@
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect> C
         </Button>
-        <Button Grid.Column="3" Grid.Row="3" Name="buttonMSign" Click="buttonMSign_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
+        <Button Grid.Row="2" Name="buttonMSign" Click="buttonMSign_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="5,6,4,2">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect> +-
-        </Button>
-        <Button Grid.Column="4" Grid.Row="3" Name="buttonRoot" Click="buttonRoot_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
-            <Button.Effect>
-                <DropShadowEffect ShadowDepth="2"/>
-            </Button.Effect> Sq Root
         </Button>
 
 
@@ -131,22 +101,22 @@
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect> 3
         </Button>
-        <Button Grid.Column="3" Grid.Row="6" Name="buttonSub" Click="OnClickOperator" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
+        <Button Grid.Column="2" Grid.Row="7" x:Name="buttonSub" Click="OnClickOperator" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,4,3,3" Content="-">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
-            </Button.Effect> -
+            </Button.Effect>
         </Button>
         <Button Grid.Column="3" Grid.Row="7" Name="buttonAdd" Click="OnClickOperator" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect> +
         </Button>
-        <Button Grid.Column="3" Grid.Row="4" Name="buttonDiv" Click="OnClickOperator" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
+        <Button Grid.Row="7" Name="buttonDiv" Click="OnClickOperator" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,4,3,3">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect> /
         </Button>
-        <Button Grid.Column="3" Grid.Row="5" Name="buttonMul" Click="OnClickOperator" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
+        <Button Grid.Column="1" Grid.Row="7" Name="buttonMul" Click="OnClickOperator" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,4,3,3">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect> X
@@ -156,5 +126,55 @@
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect> =
         </Button>
+        <Button Grid.Column="3" Grid.Row="5" x:Name="buttonGetC" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="9,8,8,9" Content="Get C" Click="buttonGetC_Click">
+            <Button.Effect>
+                <DropShadowEffect ShadowDepth="2"/>
+            </Button.Effect>
+        </Button>
+        <Button Grid.Column="3" Grid.Row="4" x:Name="buttonSetB" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="8" Content="Set B" Click="buttonSetB_Click">
+            <Button.Effect>
+                <DropShadowEffect ShadowDepth="2"/>
+            </Button.Effect>
+        </Button>
+        <Button Grid.Column="3" Grid.Row="3" x:Name="buttonSetA" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="8" Content="Set A" Click="buttonSetA_Click">
+            <Button.Effect>
+                <DropShadowEffect ShadowDepth="2"/>
+            </Button.Effect>
+        </Button>
+        <TextBox x:Name="textBoxA" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Grid.Column="4" Margin="11,20,0,0" Grid.Row="3" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.568"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBox x:Name="textBoxB" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Grid.Column="4" Margin="10,21,0,0" Grid.Row="4"/>
+        <Label x:Name="labelA" Content="A" Grid.Column="4" HorizontalAlignment="Left" Margin="28,48,0,0" Grid.Row="2" VerticalAlignment="Top" Height="29" FontWeight="Bold" Grid.RowSpan="2"/>
+        <Label x:Name="labelB" Content="B" Grid.Column="4" HorizontalAlignment="Left" Margin="31,48,0,0" Grid.Row="3" VerticalAlignment="Top" Height="29" FontWeight="Bold" Grid.RowSpan="2"/>
+        <Label x:Name="labelPythagorean" Content="        Pythagorean Theorem&#xD;&#xA;                     A² + B² = C²" Grid.Column="2" HorizontalAlignment="Left" Margin="86,47,0,0" Grid.Row="1" VerticalAlignment="Top" Width="179" FontWeight="Bold" Grid.ColumnSpan="3" Height="59" FontFamily="Urdu Typesetting" Grid.RowSpan="2" FontSize="16" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-5"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Border x:Name="borderPythagorean" BorderBrush="Black" BorderThickness="3" Grid.ColumnSpan="2" Grid.Column="3" HorizontalAlignment="Left" Height="212" Grid.Row="2" Grid.RowSpan="4" VerticalAlignment="Top" Width="189" Margin="1"/>
+        <Label x:Name="labelC" Content="C" Grid.Column="4" HorizontalAlignment="Left" Margin="32,46,0,0" Grid.Row="4" VerticalAlignment="Top" Height="29" FontWeight="Bold" Grid.RowSpan="2"/>
+        <TextBox x:Name="textBoxC" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Grid.Column="4" Margin="12,20,0,0" Grid.Row="5" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="360.734"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
     </Grid>
 </Window>
