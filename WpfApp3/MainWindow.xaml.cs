@@ -222,5 +222,19 @@ namespace WpfApp3
             b = 0;
         }
 
+        private void buttonCToF_Click(object sender, RoutedEventArgs e)
+        {
+            if(textBoxDisplay.Text != "")
+            {
+                textBoxDisplay.Text = Convert.ToString
+                    (Convert.ToDouble(textBoxDisplay.Text) * 1.8 + 32);
+            }
+        }
+
+        private void buttonFToC_Click(object sender, RoutedEventArgs e)
+        {
+            textBoxDisplay.Text = Convert.ToString
+                    ((Convert.ToDouble(textBoxDisplay.Text) - 32) / 1.8);
+        }
     }
 }

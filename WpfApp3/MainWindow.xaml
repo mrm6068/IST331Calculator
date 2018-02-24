@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp3"
         mc:Ignorable="d"
         Title="MainWindow" Height="453.996" Width="507.908" WindowStyle="ThreeDBorderWindow" Background="#FFE60E0E" Foreground="#FF0A2BFF" Loaded="Window_Loaded_1">
-    <Grid Background="#FF175F9B">
+    <Grid Background="#FF175F9B" Margin="0,0,-141,0">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -27,8 +27,10 @@
             <ColumnDefinition />
             <ColumnDefinition />
             <ColumnDefinition />
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="80"/>
         </Grid.ColumnDefinitions>
-        <Menu Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" >
+        <Menu Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" >
             <MenuItem Header="_View" />
             <MenuItem Header="_Edit" />
             <MenuItem Header="_Help" />
@@ -178,5 +180,15 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
+        <Button Grid.Column="1" Grid.Row="2" x:Name="buttonCToF" Click="buttonCToF_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,6,4,2" Content="°C to °F">
+            <Button.Effect>
+                <DropShadowEffect ShadowDepth="2"/>
+            </Button.Effect>
+        </Button>
+        <Button Grid.Column="2" Grid.Row="2" x:Name="buttonFToC" Click="buttonFToC_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,6,4,2" Content="°F to °C">
+            <Button.Effect>
+                <DropShadowEffect ShadowDepth="2"/>
+            </Button.Effect>
+        </Button>
     </Grid>
 </Window>
