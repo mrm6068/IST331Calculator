@@ -18,8 +18,8 @@
             <RowDefinition/>
             <!--<RowDefinition Height="123*"/>
             <RowDefinition Height="146*"/>-->
-        
-      <!--test-->
+
+            <!--test-->
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -128,22 +128,22 @@
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect> =
         </Button>
-        <Button Grid.Column="3" Grid.Row="5" x:Name="buttonGetC" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="9,8,8,9" Content="Get C" Click="buttonGetC_Click">
+        <Button Grid.Column="3" Grid.Row="5" x:Name="buttonGetC" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="9,34,8,35" Content="Get C" Click="buttonGetC_Click" Grid.RowSpan="2">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect>
         </Button>
-        <Button Grid.Column="3" Grid.Row="4" x:Name="buttonSetB" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="8" Content="Set B" Click="buttonSetB_Click">
+        <Button Grid.Column="3" Grid.Row="4" x:Name="buttonSetB" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="8,34,8,35" Content="Set B" Click="buttonSetB_Click" Grid.RowSpan="2">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect>
         </Button>
-        <Button Grid.Column="3" Grid.Row="3" x:Name="buttonSetA" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="8" Content="Set A" Click="buttonSetA_Click">
+        <Button Grid.Column="3" Grid.Row="3" x:Name="buttonSetA" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="8,34,8,35" Content="Set A" Click="buttonSetA_Click" Grid.RowSpan="2">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect>
         </Button>
-        <TextBox x:Name="textBoxA" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Grid.Column="4" Margin="11,20,0,0" Grid.Row="3" RenderTransformOrigin="0.5,0.5">
+        <TextBox x:Name="textBoxA" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Grid.Column="4" Margin="11,47,0,0" Grid.Row="3" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -153,10 +153,10 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <TextBox x:Name="textBoxB" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Grid.Column="4" Margin="10,21,0,0" Grid.Row="4"/>
-        <Label x:Name="labelA" Content="A" Grid.Column="4" HorizontalAlignment="Left" Margin="28,48,0,0" Grid.Row="2" VerticalAlignment="Top" Height="29" FontWeight="Bold" Grid.RowSpan="2"/>
-        <Label x:Name="labelB" Content="B" Grid.Column="4" HorizontalAlignment="Left" Margin="31,48,0,0" Grid.Row="3" VerticalAlignment="Top" Height="29" FontWeight="Bold" Grid.RowSpan="2"/>
-        <Label x:Name="labelPythagorean" Content="        Pythagorean Theorem&#xD;&#xA;                     A² + B² = C²" Grid.Column="2" HorizontalAlignment="Left" Margin="86,47,0,0" Grid.Row="1" VerticalAlignment="Top" Width="179" FontWeight="Bold" Grid.ColumnSpan="3" Height="59" FontFamily="Urdu Typesetting" Grid.RowSpan="2" FontSize="16" RenderTransformOrigin="0.5,0.5">
+        <TextBox x:Name="textBoxB" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Grid.Column="4" Margin="10,47,0,0" Grid.Row="4" Grid.RowSpan="2"/>
+        <Label x:Name="labelA" Content="A" Grid.Column="4" HorizontalAlignment="Left" Margin="31,19,0,0" Grid.Row="3" VerticalAlignment="Top" Height="29" FontWeight="Bold"/>
+        <Label x:Name="labelB" Content="B" Grid.Column="4" HorizontalAlignment="Left" Margin="31,20,0,0" Grid.Row="4" VerticalAlignment="Top" Height="29" FontWeight="Bold"/>
+        <Label x:Name="labelPythagorean" Content="        Pythagorean Theorem&#xD;&#xA;                     A² + B² = C²" Grid.Column="2" HorizontalAlignment="Left" Margin="86,20,0,0" Grid.Row="2" VerticalAlignment="Top" Width="179" FontWeight="Bold" Grid.ColumnSpan="3" Height="59" FontFamily="Urdu Typesetting" Grid.RowSpan="2" FontSize="16" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -166,9 +166,9 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Border x:Name="borderPythagorean" BorderBrush="Black" BorderThickness="3" Grid.ColumnSpan="2" Grid.Column="3" HorizontalAlignment="Left" Height="212" Grid.Row="2" Grid.RowSpan="4" VerticalAlignment="Top" Width="189" Margin="1"/>
-        <Label x:Name="labelC" Content="C" Grid.Column="4" HorizontalAlignment="Left" Margin="32,46,0,0" Grid.Row="4" VerticalAlignment="Top" Height="29" FontWeight="Bold" Grid.RowSpan="2"/>
-        <TextBox x:Name="textBoxC" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Grid.Column="4" Margin="12,20,0,0" Grid.Row="5" RenderTransformOrigin="0.5,0.5">
+        <Border x:Name="borderPythagorean" BorderBrush="Black" BorderThickness="3" Grid.ColumnSpan="2" Grid.Column="3" HorizontalAlignment="Left" Height="212" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Width="189" Margin="1,27,0,0"/>
+        <Label x:Name="labelC" Content="C" Grid.Column="4" HorizontalAlignment="Left" Margin="32,19,0,0" Grid.Row="5" VerticalAlignment="Top" Height="29" FontWeight="Bold"/>
+        <TextBox x:Name="textBoxC" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Grid.Column="4" Margin="12,46,0,0" Grid.Row="5" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
