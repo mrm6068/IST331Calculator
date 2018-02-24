@@ -92,12 +92,18 @@ namespace WpfApp3
             HandleDigit(9);
         }
 
+        private void button0_Click(object sender, RoutedEventArgs e)
+        {
+            HandleDigit(0);
+        }
+
 
         private void HandleDigit(int digit)
         {
             //Ternary Operator
             //assign value = condition evaluate ? True (value) : False (value)
             //valueSoFar and newValue are local variables
+
             string valueSoFar = numberHitSinceLastOperator ? textBoxDisplay.Text : "";
             string newValue = valueSoFar + digit.ToString();
             textBoxDisplay.Text = newValue;
@@ -206,7 +212,10 @@ namespace WpfApp3
 
         private void buttonGetC_Click(object sender, RoutedEventArgs e)
         {
-            if(a < 0 || b < 0)
+            double a = Convert.ToDouble(textBoxA.Text);
+            double b = Convert.ToDouble(textBoxB.Text);
+
+            if (a < 0 || b < 0)
             {
                 textBoxC.Text = "No neg";
             }
@@ -218,8 +227,8 @@ namespace WpfApp3
             {
                 textBoxC.Text = Convert.ToString(Math.Sqrt(a * a + b * b));
             }
-            a = 0;
-            b = 0;
+            //a = 0;
+            //b = 0;
         }
 
         private void buttonCToF_Click(object sender, RoutedEventArgs e)
@@ -235,6 +244,31 @@ namespace WpfApp3
         {
             textBoxDisplay.Text = Convert.ToString
                     ((Convert.ToDouble(textBoxDisplay.Text) - 32) / 1.8);
+        }
+
+        private void buttonD_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void buttonArea_Click(object sender, RoutedEventArgs e)
+        {
+            if (textBoxDisplay.Text != "")
+            {
+                if(Convert.ToDouble(textBoxDisplay.Text) > 0)
+                {
+                    textBoxDisplay.Text = Convert.ToString
+                        (Math.Pow(Convert.ToDouble(textBoxDisplay.Text), 2) * Math.PI);
+                }
+            }
+        }
+
+        private void buttonDecimal_Click(object sender, RoutedEventArgs e)
+        {
+            if(!textBoxDisplay.Text.Contains("."))//Can't have 2
+            {
+                textBoxDisplay.Text += ".";
+            }
         }
     }
 }
