@@ -191,7 +191,7 @@ namespace WpfApp3
         private void buttonSetA_Click(object sender, RoutedEventArgs e)
         {
             textBoxC.Clear();//Clear error message if a or b not set
-            if (textBoxDisplay.Text != "")
+            if (textBoxDisplay.Text != "" && textBoxDisplay.Text != ".")
             {
                 a = Convert.ToDouble(textBoxDisplay.Text);
                 textBoxA.Text = Convert.ToString(a);
@@ -202,7 +202,7 @@ namespace WpfApp3
         private void buttonSetB_Click(object sender, RoutedEventArgs e)
         {
             textBoxC.Clear();
-            if (textBoxDisplay.Text != "")
+            if (textBoxDisplay.Text != "" && textBoxDisplay.Text != ".")
             {
                 b = Convert.ToDouble(textBoxDisplay.Text);
                 textBoxB.Text = Convert.ToString(b);
@@ -212,20 +212,24 @@ namespace WpfApp3
 
         private void buttonGetC_Click(object sender, RoutedEventArgs e)
         {
-            double a = Convert.ToDouble(textBoxA.Text);
-            double b = Convert.ToDouble(textBoxB.Text);
+            if (textBoxA.Text != "")
+            {
+                double a = Convert.ToDouble(textBoxA.Text);
+                double b = Convert.ToDouble(textBoxB.Text);
 
-            if (a < 0 || b < 0)
-            {
-                textBoxC.Text = "No neg";
-            }
-            else if (a == 0 || b == 0)
-            {
-                textBoxC.Text = "Set A & B";
+                if (a < 0 || b < 0)
+                {
+                    textBoxC.Text = "NO NEG";
+                }
+                
+                else
+                {
+                    textBoxC.Text = Convert.ToString(Math.Sqrt(a * a + b * b));
+                }
             }
             else
             {
-                textBoxC.Text = Convert.ToString(Math.Sqrt(a * a + b * b));
+                textBoxC.Text = "Set A & B";
             }
             //a = 0;
             //b = 0;
