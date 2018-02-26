@@ -397,11 +397,7 @@ namespace WpfApp3
                         numGuessing = 0;
                         return;//End event
                     }
-
-                    //textBoxDisplay.Text = "Correct";
-                    //await Task.Run(() => System.Threading.Thread.Sleep(1500));
-
-                    //REpl
+                    //After last num, show nums to user, including new num.
                     if (numGuessing == nums.Count)
                     {
                         textBoxDisplay.Clear();
