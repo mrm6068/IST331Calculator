@@ -36,12 +36,10 @@ namespace WpfApp3
         Random rand = new Random();
         ArrayList nums = new ArrayList();
         ArrayList numsGuessed = new ArrayList();
-        bool correct = true;
         bool playing = false;
-        int numsToDisplay = 3;
+   
+        //Represents the index to be compared in above ArrayLists
         int numGuessing = 0;
-
-        int total = 0;
 
 
 
@@ -136,6 +134,10 @@ namespace WpfApp3
         
         private void ExecuteLastOperator(Operator newOperator)
         {
+            //avoids exception with no number to operate on.
+            if (textBoxDisplay.Text == "")
+                return;
+
             decimal currentValue = Convert.ToDecimal(textBoxDisplay.Text);
             decimal newValue = currentValue;
             if (numberHitSinceLastOperator)
@@ -187,7 +189,11 @@ namespace WpfApp3
 
         private void buttonMSign_Click(object sender, RoutedEventArgs e)
         {
-            textBoxDisplay.Text = (Double.Parse(textBoxDisplay.Text) * -1).ToString();
+            if (textBoxDisplay.Text != "")
+            {
+                textBoxDisplay.Text = (Double.Parse(textBoxDisplay.Text) * -1).ToString();
+            }
+                    
         }
 
         private void buttonCE_Click(object sender, RoutedEventArgs e)
@@ -363,7 +369,7 @@ namespace WpfApp3
             {
                 if (textBoxDisplay.Text != "")
                 {
-                    //
+                    //Add users guess to ArrayList
                     numsGuessed.Add(Convert.ToDouble(textBoxDisplay.Text));
                     textBoxDisplay.Clear();
                     if (Convert.ToInt32(numsGuessed[numGuessing]) == Convert.ToInt32(nums[numGuessing]))
@@ -373,26 +379,29 @@ namespace WpfApp3
                         await Task.Run(() => System.Threading.Thread.Sleep(1000));
                         memTextBox.Clear();
                     }
-                    else
-                    {
-                        correct = false;
+                    else//Wrong game over
+                    { 
                         playing = false;//Enter button now does nothing
                         memTextBox.Text = "Wrong";
                         await Task.Run(() => System.Threading.Thread.Sleep(1500));
                         memTextBox.Text = "Game Over";
                         await Task.Run(() => System.Threading.Thread.Sleep(1500));
-                        if(nums.Count == 3)
+                        if(nums.Count == 3)//none guessed right
                             memTextBox.Text = "Score: 0";
                         else
-                            memTextBox.Text = "Score: " + (nums.Count);
+                            memTextBox.Text = "Score: " + (nums.Count - 1);//most nums remembered
                         await Task.Run(() => System.Threading.Thread.Sleep(1500));
-                        return;
+                        //Reset these for next game
+                        numsGuessed = new ArrayList();
+                        nums = new ArrayList();
+                        numGuessing = 0;
+                        return;//End event
                     }
 
                     //textBoxDisplay.Text = "Correct";
                     //await Task.Run(() => System.Threading.Thread.Sleep(1500));
 
-                    //REplay nums
+                    //REpl
                     if (numGuessing == nums.Count)
                     {
                         textBoxDisplay.Clear();
