@@ -157,7 +157,7 @@
         <TextBox x:Name="textBoxB" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Grid.Column="6" Margin="12,50,0,0" Grid.Row="4" Grid.RowSpan="2"/>
         <Label x:Name="labelA" Content="A" Grid.Column="6" HorizontalAlignment="Left" Margin="33,17,0,0" Grid.Row="3" VerticalAlignment="Top" Height="29" FontWeight="Bold"/>
         <Label x:Name="labelB" Content="B" Grid.Column="6" HorizontalAlignment="Left" Margin="33,18,0,0" Grid.Row="4" VerticalAlignment="Top" Height="29" FontWeight="Bold"/>
-        <Label x:Name="labelPythagorean" Content="        Pythagorean Theorem&#xD;&#xA;                     A² + B² = C²" Grid.Column="4" HorizontalAlignment="Left" Margin="89,19,0,0" Grid.Row="2" VerticalAlignment="Top" Width="179" FontWeight="Bold" Grid.ColumnSpan="3" Height="59" FontFamily="Urdu Typesetting" Grid.RowSpan="2" FontSize="16" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="labelPythagorean" Content="    Pythagorean Theorem&#xA;            A² + B² = C²" Grid.Column="4" HorizontalAlignment="Left" Margin="95,28,0,0" Grid.Row="2" VerticalAlignment="Top" Width="197" Grid.ColumnSpan="3" Height="59" FontFamily="Urdu Typesetting" Grid.RowSpan="2" FontSize="16" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

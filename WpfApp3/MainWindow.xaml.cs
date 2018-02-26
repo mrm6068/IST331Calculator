@@ -365,13 +365,14 @@ namespace WpfApp3
 
         private async void buttonEnter_Click(object sender, RoutedEventArgs e)
         {
-            if (playing)
+            if (playing)//If not playing this button does nothing
             {
-                if (textBoxDisplay.Text != "")
+                if (textBoxDisplay.Text != "")//Avoid exception
                 {
-                    //Add users guess to ArrayList
+                    //Add users guess to ArrayList field
                     numsGuessed.Add(Convert.ToDouble(textBoxDisplay.Text));
                     textBoxDisplay.Clear();
+                    //if user guess matches correct answer...
                     if (Convert.ToInt32(numsGuessed[numGuessing]) == Convert.ToInt32(nums[numGuessing]))
                     {
                         numGuessing++;
@@ -397,56 +398,44 @@ namespace WpfApp3
                         numGuessing = 0;
                         return;//End event
                     }
-                    //After last num, show nums to user, including new num.
+                    //The last thing Enter button does is print the new list of numbers user needs to remember.
                     if (numGuessing == nums.Count)
                     {
                         textBoxDisplay.Clear();
-                        nums.Add(rand.Next(0, 10));
+                        nums.Add(rand.Next(0, 10));//Create one new random for this round.
                         for (int i = 0; i < nums.Count; i++)
                         {
                             memTextBox.Text = Convert.ToString(nums[i]);
-                            await Task.Run(() => System.Threading.Thread.Sleep(1500));
+                            await Task.Run(() => System.Threading.Thread.Sleep(1000));
 
                             if (i != nums.Count - 1)//No * after last num
                             {
                                 memTextBox.Text = Convert.ToString("*");
-                                await Task.Run(() => System.Threading.Thread.Sleep(1000));
+                                await Task.Run(() => System.Threading.Thread.Sleep(700));
                             }
                         }
                         memTextBox.Text = Convert.ToString("Your Turn");
-                        numsGuessed = new ArrayList();//Reset for new guesses
+                        //Reset these for new round of guesses.
+                        numsGuessed = new ArrayList();
                         numGuessing = 0;
-
-                        //numsToDisplay++;
                     }
-                    //numGuessing = 0;
-
-                    //memTextBox.Text = Convert.ToString(nums[nums.Count-1]);
-                    //await Task.Run(() => System.Threading.Thread.Sleep(1500));
-
-
+              
                 }
-                //for (int i = 0; i < numsToDisplay - 1; i++)
-                //{
-                //    textBoxDisplay.Text = Convert.ToString(nums[i]);
-                //    await Task.Run(() => System.Threading.Thread.Sleep(1500));
-                //    textBoxDisplay.Text = Convert.ToString(nums[i]);
-                //    await Task.Run(() => System.Threading.Thread.Sleep(1500));
-                //    textBoxDisplay.Text = Convert.ToString(nums[i]);
-                //}
              
             }
         }
 
         private async void buttonPlay_Click(object sender, RoutedEventArgs e)
         {
-            if (!playing)//button does nothing if not playing
+            if (!playing)//button does nothing if playing already
             {
                 playing = true;
+                //Start with 3 nums to remember
                 nums.Add(rand.Next(0, 10));
                 nums.Add(rand.Next(0, 10));
                 nums.Add(rand.Next(0, 10));
 
+                //Show these nums to user with time delay and * inbetween
                 for (int i = 0; i < nums.Count; i++)
                 {
                     memTextBox.Text = Convert.ToString(nums[i]);
@@ -459,27 +448,10 @@ namespace WpfApp3
                     }
                  
                 }
+                //nums done displaying
                 memTextBox.Text = "Your Turn";
-
             }
 
-
-
-            //while (correct)
-            //{
-            //    for (int i = 0; i < numsToDisplay; i++)
-            //    {
-            //        memTextBox.Text = Convert.ToString(nums[i]);
-            //        await Task.Run(() => System.Threading.Thread.Sleep(1500));
-            //    }
-
-            //}
-
-        }
-
-        private async void Sleep(int mili)
-        {
-            await Task.Run(() => System.Threading.Thread.Sleep(mili));
         }
 
         private void buttonArea_Click(object sender, RoutedEventArgs e)
@@ -502,6 +474,5 @@ namespace WpfApp3
             }
         }
 
-     
     }
 }
