@@ -233,7 +233,7 @@ namespace WpfApp3
 
         private void buttonGetC_Click(object sender, RoutedEventArgs e)
         {
-            if (textBoxA.Text != "")
+            if (textBoxA.Text != "" && textBoxB.Text != "")
             {
                 double a = Convert.ToDouble(textBoxA.Text);
                 double b = Convert.ToDouble(textBoxB.Text);
