@@ -57,8 +57,6 @@
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect> +-
         </Button>
-
-
         <Button Grid.Column="0" Grid.Row="4" Name="button7" Click="button7_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
@@ -144,37 +142,36 @@
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect>
         </Button>
-        <TextBox x:Name="textBoxA" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Grid.Column="6" Margin="10,48,0,0" Grid.Row="3" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
+        <TextBox x:Name="textBoxA" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Grid.Column="6" Margin="12,50,0,0" Grid.Row="3" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="0.568"/>
+                    <RotateTransform/>
                     <TranslateTransform/>
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
         <TextBox x:Name="textBoxB" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Grid.Column="6" Margin="12,50,0,0" Grid.Row="4" Grid.RowSpan="2"/>
         <Label x:Name="labelA" Content="A" Grid.Column="6" HorizontalAlignment="Left" Margin="33,17,0,0" Grid.Row="3" VerticalAlignment="Top" Height="29" FontWeight="Bold"/>
-        <Label x:Name="labelB" Content="B" Grid.Column="6" HorizontalAlignment="Left" Margin="33,18,0,0" Grid.Row="4" VerticalAlignment="Top" Height="29" FontWeight="Bold"/>
+        <Label x:Name="labelB" Content="B" Grid.Column="6" HorizontalAlignment="Left" Margin="33,17,0,0" Grid.Row="4" VerticalAlignment="Top" Height="29" FontWeight="Bold"/>
         <Label x:Name="labelPythagorean" Content="    Pythagorean Theorem&#xA;            A² + B² = C²" Grid.Column="4" HorizontalAlignment="Left" Margin="95,28,0,0" Grid.Row="2" VerticalAlignment="Top" Width="197" Grid.ColumnSpan="3" Height="59" FontFamily="Urdu Typesetting" Grid.RowSpan="2" FontSize="16" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
                     <RotateTransform/>
-                    <TranslateTransform Y="-5"/>
+                    <TranslateTransform/>
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
         <Border x:Name="borderPythagorean" BorderBrush="Black" BorderThickness="3" Grid.ColumnSpan="2" Grid.Column="5" HorizontalAlignment="Left" Height="226" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Width="189" Margin="4,19,0,0"/>
-        <Label x:Name="labelC" Content="C" Grid.Column="6" HorizontalAlignment="Left" Margin="34,17,0,0" Grid.Row="5" VerticalAlignment="Top" Height="29" FontWeight="Bold"/>
-        <TextBox x:Name="textBoxC" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Grid.Column="6" Margin="14,49,0,0" Grid.Row="5" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
+        <Label x:Name="labelC" Content="C" Grid.Column="6" HorizontalAlignment="Left" Margin="33,17,0,0" Grid.Row="5" VerticalAlignment="Top" Height="29" FontWeight="Bold"/>
+        <TextBox x:Name="textBoxC" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Grid.Column="6" Margin="12,50,0,0" Grid.Row="5" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="360.734"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </TextBox.RenderTransform>
@@ -214,8 +211,8 @@
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="-0.556"/>
-                    <TranslateTransform X="0.18" Y="0.019"/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
