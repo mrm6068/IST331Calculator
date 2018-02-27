@@ -407,5 +407,23 @@ namespace WpfApp3
                     ((Convert.ToDouble(textBoxDisplay.Text) / 0.3937007874));
             }
         }
+
+        private void buttonMilesToKm_Click(object sender, RoutedEventArgs e)
+        {
+            if (textBoxDisplay.Text != "")
+            {
+                textBoxDisplay.Text = Convert.ToString
+                    ((Convert.ToDouble(textBoxDisplay.Text) * 1.609344));
+            }
+        }
+
+        private void buttonKmToMiles_Click(object sender, RoutedEventArgs e)
+        {
+            if (textBoxDisplay.Text != "")
+            {
+                textBoxDisplay.Text = Convert.ToString
+                    ((Convert.ToDouble(textBoxDisplay.Text) / 1.609344));
+            }
+        }
     }
 }
