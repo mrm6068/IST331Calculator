@@ -30,13 +30,16 @@ namespace WpfApp3
         private decimal valueSoFar = 0;
         private bool numberHitSinceLastOperator = false;
 
+        //For Pythagorean
         private double a = 0;
         private double b = 0;
 
+        //Fields for memory game
         Random rand = new Random();
         ArrayList nums = new ArrayList();
         ArrayList numsGuessed = new ArrayList();
         bool playing = false;
+        bool printing = false;
    
         //Represents the index to be compared in above ArrayLists
         int numGuessing = 0;
@@ -268,105 +271,13 @@ namespace WpfApp3
                     ((Convert.ToDouble(textBoxDisplay.Text) - 32) / 1.8);
         }
 
-        //public static void Sleeping(int miliseconds)
-        //{
-        //    var task = Sleep(miliseconds);
-        //    task.Wait();
-        //}
-
-        //public static async Task Sleep(int miliseconds)
-        //{
-        //    await Task.Delay(miliseconds);
-        //}
-
-        //private async void buttonPlay_Click(object sender, RoutedEventArgs e)
-        //{
-        //    if (!playing)
-        //    {
-        //        playing = true;
-        //        nums.Add(rand.Next(0, 10));
-        //        nums.Add(rand.Next(0, 10));
-        //        nums.Add(rand.Next(0, 10));
-
-        //        for (int i = 0; i < numsToDisplay; i++)
-        //        {
-        //            memTextBox.Text = Convert.ToString(nums[i]);
-        //            await Task.Run(() => System.Threading.Thread.Sleep(1500));
-        //        }
-        //    }
-
-
-
-        //    //while (correct)
-        //    //{
-        //    //    for (int i = 0; i < numsToDisplay; i++)
-        //    //    {
-        //    //        memTextBox.Text = Convert.ToString(nums[i]);
-        //    //        await Task.Run(() => System.Threading.Thread.Sleep(1500));
-        //    //    }
-
-        //    //}
-
-        //}
-
-        //private async void buttonEnter_Click(object sender, RoutedEventArgs e)
-        //{
-        //    if(playing)
-        //    {
-        //        if (textBoxDisplay.Text != "")
-        //        {
-        //            numsGuessed.Add(Convert.ToDouble(textBoxDisplay.Text));
-
-        //            if (numsGuessed[numGuessing].Equals(nums[numGuessing]))
-        //            {
-        //                textBoxDisplay.Text = "Correct";
-        //                await Task.Run(() => System.Threading.Thread.Sleep(1500));
-        //            }
-        //            else
-        //            {
-        //                correct = false;
-        //                textBoxDisplay.Text = "Wrong";
-        //                await Task.Run(() => System.Threading.Thread.Sleep(1500));
-        //                textBoxDisplay.Text = "Game Over";
-        //                await Task.Run(() => System.Threading.Thread.Sleep(1500));
-        //            }
-        //            if(correct)
-        //            {
-        //                textBoxDisplay.Text = "Correct";
-        //                await Task.Run(() => System.Threading.Thread.Sleep(1500));
-        //                for (int i = 0; i < numsToDisplay; i++)
-        //                {
-        //                    memTextBox.Text = Convert.ToString(nums[i]);
-        //                    await Task.Run(() => System.Threading.Thread.Sleep(1500));
-        //                }
-        //                nums.Add(rand.Next(0, 10));
-        //                numsToDisplay++;
-        //                memTextBox.Text = Convert.ToString(nums[numsToDisplay]);
-        //                await Task.Run(() => System.Threading.Thread.Sleep(1500));
-                        
-
-        //            }
-        //            //for (int i = 0; i < numsToDisplay - 1; i++)
-        //            //{
-        //            //    textBoxDisplay.Text = Convert.ToString(nums[i]);
-        //            //    await Task.Run(() => System.Threading.Thread.Sleep(1500));
-        //            //    textBoxDisplay.Text = Convert.ToString(nums[i]);
-        //            //    await Task.Run(() => System.Threading.Thread.Sleep(1500));
-        //            //    textBoxDisplay.Text = Convert.ToString(nums[i]);
-        //            //}
-        //        }
-        //    }
-        //}
-
-        //private async void Sleep(int mili)
-        //{
-        //    await Task.Run(() => System.Threading.Thread.Sleep(mili));
-        //}
+        
 
         private async void buttonEnter_Click(object sender, RoutedEventArgs e)
         {
-            if (playing)//If not playing this button does nothing
+            if (playing && !printing)//If not playing or if printing, this button does nothing
             {
+                printing = true;
                 if (textBoxDisplay.Text != "")//Avoid exception
                 {
                     //Add users guess to ArrayList field
@@ -421,7 +332,7 @@ namespace WpfApp3
                     }
               
                 }
-             
+                printing = false;//Done printing, enter button now has functionality.
             }
         }
 
@@ -430,6 +341,7 @@ namespace WpfApp3
             if (!playing)//button does nothing if playing already
             {
                 playing = true;
+                printing = true;
                 //Start with 3 nums to remember
                 nums.Add(rand.Next(0, 10));
                 nums.Add(rand.Next(0, 10));
@@ -450,6 +362,7 @@ namespace WpfApp3
                 }
                 //nums done displaying
                 memTextBox.Text = "Your Turn";
+                printing = false;
             }
 
         }
