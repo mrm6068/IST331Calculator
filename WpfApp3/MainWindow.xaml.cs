@@ -267,8 +267,11 @@ namespace WpfApp3
 
         private void buttonFToC_Click(object sender, RoutedEventArgs e)
         {
-            textBoxDisplay.Text = Convert.ToString
+            if (textBoxDisplay.Text != "")
+            {
+                textBoxDisplay.Text = Convert.ToString
                     ((Convert.ToDouble(textBoxDisplay.Text) - 32) / 1.8);
+            }
         }
 
         
@@ -387,5 +390,22 @@ namespace WpfApp3
             }
         }
 
+        private void buttonCmToInch_Click(object sender, RoutedEventArgs e)
+        {
+            if (textBoxDisplay.Text != "")
+            {
+                textBoxDisplay.Text = Convert.ToString
+                    ((Convert.ToDouble(textBoxDisplay.Text) * 0.3937007874));
+            }
+        }
+
+        private void buttonInchToCm_Click(object sender, RoutedEventArgs e)
+        {
+            if (textBoxDisplay.Text != "")
+            {
+                textBoxDisplay.Text = Convert.ToString
+                    ((Convert.ToDouble(textBoxDisplay.Text) / 0.3937007874));
+            }
+        }
     }
 }

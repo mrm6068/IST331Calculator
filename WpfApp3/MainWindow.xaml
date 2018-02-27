@@ -227,5 +227,15 @@
         <Border x:Name="borderPythagorean_Copy" BorderBrush="Black" BorderThickness="3" Grid.ColumnSpan="2" Grid.Column="3" HorizontalAlignment="Left" Grid.Row="2" Grid.RowSpan="3" Width="189" Margin="5,4,0,10">
             <Label x:Name="memLabel" Content="Memory Tester" FontSize="22" Margin="8,-1,-8,93"/>
         </Border>
+        <Button Grid.Column="3" Grid.Row="6" x:Name="buttonCmToInch" Click="buttonCmToInch_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="5,4,5,3" Content="cm to in">
+            <Button.Effect>
+                <DropShadowEffect ShadowDepth="2"/>
+            </Button.Effect>
+        </Button>
+        <Button Grid.Column="4" Grid.Row="6" x:Name="buttonInchToCm" Click="buttonInchToCm_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,3,4,4" Content="in to cm">
+            <Button.Effect>
+                <DropShadowEffect ShadowDepth="2"/>
+            </Button.Effect>
+        </Button>
     </Grid>
 </Window>
