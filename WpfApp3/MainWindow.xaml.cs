@@ -55,7 +55,7 @@ namespace WpfApp3
             buttonEquals.Tag = Operator.Equals;
         }
 
-        public MainWindow()//gjhfjhf
+        public MainWindow()
         {
             InitializeComponent();
         }

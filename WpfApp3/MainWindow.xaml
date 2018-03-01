@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="453.996" Width="703.908" WindowStyle="ThreeDBorderWindow" Background="#FFE60E0E" Foreground="#FF0A2BFF" Loaded="Window_Loaded_1">
-    <Grid Background="#FF175F9B" Margin="0,0,2,0">
+        Title="MainWindow" Height="453.996" Width="703.908" WindowStyle="ThreeDBorderWindow" Background="#000000" Foreground="#FF0A2BFF" Loaded="Window_Loaded_1">
+    <Grid Background="#030B26" Margin="0,0,2,0">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -37,107 +37,107 @@
         </Menu>
         <TextBox Name = "textBoxDisplay" Grid.Row="1" 
                  Grid.ColumnSpan="5" Margin="36,5,29,4" TextAlignment="Center" FontSize="36" Grid.Column="1"/>
-        <Button Grid.Column="0" Name="buttonBack" Click="buttonBack_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="5,5,5,3" Grid.Row="1">
+        <Button Grid.Column="0" Name="buttonBack" Click="buttonBack_Click" Background="#124973" Foreground="White" BorderBrush="Black" Margin="5,5,5,3" Grid.Row="1">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect> Back
         </Button>
-        <Button Grid.Row="2" Name="buttonCE" Click="buttonCE_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="4,4,6,4">
+        <Button Grid.Row="2" Name="buttonCE" Click="buttonCE_Click" Background="#124973" Foreground="White" BorderBrush="Black" Margin="4,4,6,4">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect> CE
         </Button>
-        <Button Grid.Row="3" Name="buttonC" Click="buttonC_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="4,4,6,4">
+        <Button Grid.Row="3" Name="buttonC" Click="buttonC_Click" Background="#124973" Foreground="White" BorderBrush="Black" Margin="4,4,6,4">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect> C
         </Button>
-        <Button Grid.Row="7" Name="buttonMSign" Click="buttonMSign_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="5,4,4,4" Grid.Column="3">
+        <Button Grid.Row="7" Name="buttonMSign" Click="buttonMSign_Click" Background="#124973" Foreground="White" BorderBrush="Black" Margin="5,4,4,4" Grid.Column="3">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect> +-
         </Button>
-        <Button Grid.Column="0" Grid.Row="4" Name="button7" Click="button7_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
+        <Button Grid.Column="0" Grid.Row="4" Name="button7" Click="button7_Click" Background="#124973" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect> 7
         </Button>
-        <Button Grid.Column="1" Grid.Row="4" Name="button8" Click="button8_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
+        <Button Grid.Column="1" Grid.Row="4" Name="button8" Click="button8_Click" Background="#124973" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect> 8
         </Button>
-        <Button Grid.Column="2" Grid.Row="4" Name="button9" Click="button9_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
+        <Button Grid.Column="2" Grid.Row="4" Name="button9" Click="button9_Click" Background="#124973" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect> 9
         </Button>
-        <Button Grid.Column="0" Grid.Row="5" Name="button4" Click="button4_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
+        <Button Grid.Column="0" Grid.Row="5" Name="button4" Click="button4_Click" Background="#124973" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect> 4
         </Button>
-        <Button Grid.Column="1" Grid.Row="5" Name="button5" Click="button5_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
+        <Button Grid.Column="1" Grid.Row="5" Name="button5" Click="button5_Click" Background="#124973" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect> 5
         </Button>
-        <Button Grid.Column="2" Grid.Row="5" Name="button6" Click="button6_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
+        <Button Grid.Column="2" Grid.Row="5" Name="button6" Click="button6_Click" Background="#124973" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect> 6
         </Button>
-        <Button Grid.Column="0" Grid.Row="6" Name="button1" Click="button1_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
+        <Button Grid.Column="0" Grid.Row="6" Name="button1" Click="button1_Click" Background="#124973" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect> 1
         </Button>
-        <Button Grid.Column="1" Grid.Row="6" Name="button2" Click="button2_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,2,4,6">
+        <Button Grid.Column="1" Grid.Row="6" Name="button2" Click="button2_Click" Background="#124973" Foreground="White" BorderBrush="Black" Margin="6,2,4,6">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect> 2
         </Button>
-        <Button Grid.Column="2" Grid.Row="6" Name="button3" Click="button3_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
+        <Button Grid.Column="2" Grid.Row="6" Name="button3" Click="button3_Click" Background="#124973" Foreground="White" BorderBrush="Black" Margin="6,4,4,4">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect> 3
         </Button>
-        <Button Grid.Column="2" Grid.Row="3" x:Name="buttonSub" Click="OnClickOperator" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="5,4,4,3" Content="-">
+        <Button Grid.Column="2" Grid.Row="3" x:Name="buttonSub" Click="OnClickOperator" Background="#124973" Foreground="White" BorderBrush="Black" Margin="5,4,4,3" Content="-">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect>
         </Button>
-        <Button Grid.Column="1" Grid.Row="3" Name="buttonAdd" Click="OnClickOperator" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="5,5,5,3">
+        <Button Grid.Column="1" Grid.Row="3" Name="buttonAdd" Click="OnClickOperator" Background="#124973" Foreground="White" BorderBrush="Black" Margin="5,5,5,3">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect> +
         </Button>
-        <Button Grid.Row="2" Name="buttonDiv" Click="OnClickOperator" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="5,4,4,3" Grid.Column="2">
+        <Button Grid.Row="2" Name="buttonDiv" Click="OnClickOperator" Background="#124973" Foreground="White" BorderBrush="Black" Margin="5,4,4,3" Grid.Column="2">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect> /
         </Button>
-        <Button Grid.Column="1" Grid.Row="2" Name="buttonMul" Click="OnClickOperator" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="5,3,4,4">
+        <Button Grid.Column="1" Grid.Row="2" Name="buttonMul" Click="OnClickOperator" Background="#124973" Foreground="White" BorderBrush="Black" Margin="5,3,4,4">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect> X
         </Button>
-        <Button Grid.Column="2" Grid.Row="7" Name="buttonEquals" Click="OnClickOperator" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="5,3,5,5">
+        <Button Grid.Column="2" Grid.Row="7" Name="buttonEquals" Click="OnClickOperator" Background="#124973" Foreground="White" BorderBrush="Black" Margin="5,3,5,5">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect> =
         </Button>
-        <Button Grid.Column="5" Grid.Row="5" x:Name="buttonGetC" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="12,37,6,32" Content="Get C" Click="buttonGetC_Click" Grid.RowSpan="2">
+        <Button Grid.Column="5" Grid.Row="5" x:Name="buttonGetC" Background="#124973" Foreground="White" BorderBrush="Black" Margin="12,37,6,32" Content="Get C" Click="buttonGetC_Click" Grid.RowSpan="2">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect>
         </Button>
-        <Button Grid.Column="5" Grid.Row="4" x:Name="buttonSetB" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="11,37,6,32" Content="Set B" Click="buttonSetB_Click" Grid.RowSpan="2">
+        <Button Grid.Column="5" Grid.Row="4" x:Name="buttonSetB" Background="#124973" Foreground="White" BorderBrush="Black" Margin="11,37,6,32" Content="Set B" Click="buttonSetB_Click" Grid.RowSpan="2">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect>
         </Button>
-        <Button Grid.Column="5" Grid.Row="3" x:Name="buttonSetA" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="11,35,6,34" Content="Set A" Click="buttonSetA_Click" Grid.RowSpan="2">
+        <Button Grid.Column="5" Grid.Row="3" x:Name="buttonSetA" Background="#124973" Foreground="White" BorderBrush="Black" Margin="11,35,6,34" Content="Set A" Click="buttonSetA_Click" Grid.RowSpan="2">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect>
@@ -153,9 +153,9 @@
             </TextBox.RenderTransform>
         </TextBox>
         <TextBox x:Name="textBoxB" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Grid.Column="6" Margin="12,50,0,0" Grid.Row="4" Grid.RowSpan="2"/>
-        <Label x:Name="labelA" Content="A" Grid.Column="6" HorizontalAlignment="Left" Margin="33,17,0,0" Grid.Row="3" VerticalAlignment="Top" Height="29" FontWeight="Bold"/>
-        <Label x:Name="labelB" Content="B" Grid.Column="6" HorizontalAlignment="Left" Margin="33,17,0,0" Grid.Row="4" VerticalAlignment="Top" Height="29" FontWeight="Bold"/>
-        <Label x:Name="labelPythagorean" Content="    Pythagorean Theorem&#xA;            A² + B² = C²" Grid.Column="4" HorizontalAlignment="Left" Margin="95,28,0,0" Grid.Row="2" VerticalAlignment="Top" Width="197" Grid.ColumnSpan="3" Height="59" FontFamily="Urdu Typesetting" Grid.RowSpan="2" FontSize="16" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+        <Label x:Name="labelA" Content="A" Foreground="#89FAFA" Grid.Column="6" HorizontalAlignment="Left" Margin="33,17,0,0" Grid.Row="3" VerticalAlignment="Top" Height="29" FontWeight="Bold"/>
+        <Label x:Name="labelB" Content="B" Foreground="#89FAFA" Grid.Column="6" HorizontalAlignment="Left" Margin="33,17,0,0" Grid.Row="4" VerticalAlignment="Top" Height="29" FontWeight="Bold"/>
+        <Label x:Name="labelPythagorean" Content="    Pythagorean Theorem&#xA;            A² + B² = C²" Foreground="#89FAFA" Grid.Column="4" HorizontalAlignment="Left" Margin="95,28,0,0" Grid.Row="2" VerticalAlignment="Top" Width="197" Grid.ColumnSpan="3" Height="59" FontFamily="Urdu Typesetting" Grid.RowSpan="2" FontSize="16" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -165,8 +165,8 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Border x:Name="borderPythagorean" BorderBrush="Black" BorderThickness="3" Grid.ColumnSpan="2" Grid.Column="5" HorizontalAlignment="Left" Height="226" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Width="189" Margin="4,19,0,0"/>
-        <Label x:Name="labelC" Content="C" Grid.Column="6" HorizontalAlignment="Left" Margin="33,17,0,0" Grid.Row="5" VerticalAlignment="Top" Height="29" FontWeight="Bold"/>
+        <Border x:Name="borderPythagorean" BorderBrush="#89FAFA" BorderThickness="3" Grid.ColumnSpan="2" Grid.Column="5" HorizontalAlignment="Left" Height="226" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Width="189" Margin="4,19,0,0"/>
+        <Label x:Name="labelC" Content="C" Foreground="#89FAFA" Grid.Column="6" HorizontalAlignment="Left" Margin="33,17,0,0" Grid.Row="5" VerticalAlignment="Top" Height="29" FontWeight="Bold"/>
         <TextBox x:Name="textBoxC" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Grid.Column="6" Margin="12,50,0,0" Grid.Row="5" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
             <TextBox.RenderTransform>
                 <TransformGroup>
@@ -176,32 +176,32 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <Button Grid.Column="4" Grid.Row="7" x:Name="buttonCToF" Click="buttonCToF_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="5,4" Content="°C to °F">
+        <Button Grid.Column="4" Grid.Row="7" x:Name="buttonCToF" Click="buttonCToF_Click" Background="#124973" Foreground="White" BorderBrush="Black" Margin="5,4" Content="°C to °F">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect>
         </Button>
-        <Button Grid.Column="5" Grid.Row="7" x:Name="buttonFToC" Click="buttonFToC_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="7,4,4,4" Content="°F to °C">
+        <Button Grid.Column="5" Grid.Row="7" x:Name="buttonFToC" Click="buttonFToC_Click" Background="#124973" Foreground="White" BorderBrush="Black" Margin="7,4,4,4" Content="°F to °C">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect>
         </Button>
-        <Button Grid.Column="6" Grid.Row="7" x:Name="buttonArea" Click="buttonArea_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,4,5,6" Content="Area from&#xA;  Radius">
+        <Button Grid.Column="6" Grid.Row="7" x:Name="buttonArea" Click="buttonArea_Click" Background="#124973" Foreground="White" BorderBrush="Black" Margin="6,4,5,6" Content="Area from&#xA;  Radius">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect>
         </Button>
-        <Button Grid.Column="1" Grid.Row="7" x:Name="button0" Click="button0_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,3,4,6" Content="0">
+        <Button Grid.Column="1" Grid.Row="7" x:Name="button0" Click="button0_Click" Background="#124973" Foreground="White" BorderBrush="Black" Margin="6,3,4,6" Content="0">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect>
         </Button>
-        <Button Grid.Column="0" Grid.Row="7" x:Name="buttonDecimal" Click="buttonDecimal_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="5,3,5,6" Content=".">
+        <Button Grid.Column="0" Grid.Row="7" x:Name="buttonDecimal" Click="buttonDecimal_Click" Background="#124973" Foreground="White" BorderBrush="Black" Margin="5,3,5,6" Content=".">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect>
         </Button>
-        <Button Grid.Column="3" Grid.Row="3" x:Name="buttonPlay" Click="buttonPlay_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="21,31,4,34" Content="Play" Grid.RowSpan="2">
+        <Button Grid.Column="3" Grid.Row="3" x:Name="buttonPlay" Click="buttonPlay_Click" Background="#124973" Foreground="White" BorderBrush="Black" Margin="21,31,4,34" Content="Play" Grid.RowSpan="2">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect>
@@ -216,30 +216,30 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <Button Grid.Column="4" Grid.Row="3" x:Name="buttonEnter" Click="buttonEnter_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="9,31,19,34" Content="Enter" Grid.RowSpan="2">
+        <Button Grid.Column="4" Grid.Row="3" x:Name="buttonEnter" Click="buttonEnter_Click" Background="#124973" Foreground="White" BorderBrush="Black" Margin="9,31,19,34" Content="Enter" Grid.RowSpan="2">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect>
         </Button>
-        <Border x:Name="borderPythagorean_Copy" BorderBrush="Black" BorderThickness="3" Grid.ColumnSpan="2" Grid.Column="3" HorizontalAlignment="Left" Grid.Row="2" Grid.RowSpan="3" Width="189" Margin="5,4,0,10">
-            <Label x:Name="memLabel" Content="Memory Tester" FontSize="22" Margin="8,-1,-8,93"/>
+        <Border x:Name="borderPythagorean_Copy" BorderBrush="#89FAFA" BorderThickness="3" Grid.ColumnSpan="2" Grid.Column="3" HorizontalAlignment="Left" Grid.Row="2" Grid.RowSpan="3" Width="189" Margin="5,4,0,10">
+            <Label x:Name="memLabel" Content="Memory Tester" Foreground="#89FAFA" FontSize="22" Margin="8,-1,-8,93"/>
         </Border>
-        <Button Grid.Column="3" Grid.Row="6" x:Name="buttonCmToInch" Click="buttonCmToInch_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="5,4,5,3" Content="cm to in">
+        <Button Grid.Column="3" Grid.Row="6" x:Name="buttonCmToInch" Click="buttonCmToInch_Click" Background="#124973" Foreground="White" BorderBrush="Black" Margin="5,4,5,3" Content="cm to in">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect>
         </Button>
-        <Button Grid.Column="4" Grid.Row="6" x:Name="buttonInchToCm" Click="buttonInchToCm_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,3,4,4" Content="in to cm">
+        <Button Grid.Column="4" Grid.Row="6" x:Name="buttonInchToCm" Click="buttonInchToCm_Click" Background="#124973" Foreground="White" BorderBrush="Black" Margin="6,3,4,4" Content="in to cm">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect>
         </Button>
-        <Button Grid.Column="3" Grid.Row="5" x:Name="buttonMilesToKm" Click="buttonMilesToKm_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="5,4" Content="Miles to Km">
+        <Button Grid.Column="3" Grid.Row="5" x:Name="buttonMilesToKm" Click="buttonMilesToKm_Click" Background="#124973" Foreground="White" BorderBrush="Black" Margin="5,4" Content="Miles to Km">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect>
         </Button>
-        <Button Grid.Column="4" Grid.Row="5" x:Name="buttonKmToMiles" Click="buttonKmToMiles_Click" Background="#FFBF2626" Foreground="White" BorderBrush="Black" Margin="6,4,4,4" Content="Km to Miles">
+        <Button Grid.Column="4" Grid.Row="5" x:Name="buttonKmToMiles" Click="buttonKmToMiles_Click" Background="#124973" Foreground="White" BorderBrush="Black" Margin="6,4,4,4" Content="Km to Miles">
             <Button.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Button.Effect>
