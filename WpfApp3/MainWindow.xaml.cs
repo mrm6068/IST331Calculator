@@ -50,6 +50,11 @@ namespace WpfApp3
         //Represents the index to be compared in above ArrayLists
         int numGuessing = 0;
 
+        KinectAudioSource _kinectSource;
+        KinectSensor _kinectSensor;
+        SpeechRecognitionEngine _speechEngine;
+        Stream _stream;
+
 
 
         private void Window_Loaded_1(object sender, RoutedEventArgs e)
@@ -59,6 +64,15 @@ namespace WpfApp3
             buttonSub.Tag = Operator.Minus;
             buttonAdd.Tag = Operator.Plus;
             buttonEquals.Tag = Operator.Equals;
+
+            listInstalledRecognizers.ItemsSource =
+            SpeechRecognitionEngine.InstalledRecognizers();
+            if (listInstalledRecognizers.Items.Count > 0)
+                listInstalledRecognizers.SelectedItem =
+                    listInstalledRecognizers.Items[0];
+
+            _kinectSensor = KinectSensor.KinectSensors[0];
+            _kinectSensor.Start();
         }
 
         public MainWindow()
@@ -436,27 +450,24 @@ namespace WpfApp3
         /********************************************************************
          *******************************************************************/
 
-        KinectAudioSource _kinectSource;
-        KinectSensor _kinectSensor;
-        SpeechRecognitionEngine _speechEngine;
-        Stream _stream;
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
+        
+        //public MainWindow()
+        //{
+        //    InitializeComponent();
+        //}
 
-        void WindowLoaded(object sender, RoutedEventArgs e)
-        {
-            listInstalledRecognizers.ItemsSource =
-            SpeechRecognitionEngine.InstalledRecognizers();
-            if (listInstalledRecognizers.Items.Count > 0)
-                listInstalledRecognizers.SelectedItem =
-                    listInstalledRecognizers.Items[0];
+        //void WindowLoaded(object sender, RoutedEventArgs e)
+        //{
+            //listInstalledRecognizers.ItemsSource =
+            //SpeechRecognitionEngine.InstalledRecognizers();
+            //if (listInstalledRecognizers.Items.Count > 0)
+            //    listInstalledRecognizers.SelectedItem =
+            //        listInstalledRecognizers.Items[0];
 
-            _kinectSensor = KinectSensor.KinectSensors[0];
-            _kinectSensor.Start();
+            //_kinectSensor = KinectSensor.KinectSensors[0];
+            //_kinectSensor.Start();
 
-        }
+        //}
 
         private void BtnStartClick(object sender, RoutedEventArgs e)
         {
