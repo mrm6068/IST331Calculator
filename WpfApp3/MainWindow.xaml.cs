@@ -57,7 +57,7 @@ namespace WpfApp3
 
 
 
-        private void Window_Loaded_1(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             buttonMul.Tag = Operator.Times;
             buttonDiv.Tag = Operator.Divide;
@@ -65,11 +65,11 @@ namespace WpfApp3
             buttonAdd.Tag = Operator.Plus;
             buttonEquals.Tag = Operator.Equals;
 
-            listInstalledRecognizers.ItemsSource =
-            SpeechRecognitionEngine.InstalledRecognizers();
-            if (listInstalledRecognizers.Items.Count > 0)
-                listInstalledRecognizers.SelectedItem =
-                    listInstalledRecognizers.Items[0];
+            //listInstalledRecognizers.ItemsSource =
+            //        SpeechRecognitionEngine.InstalledRecognizers();
+            //if (listInstalledRecognizers.Items.Count > 0)
+            //    listInstalledRecognizers.SelectedItem =
+            //        listInstalledRecognizers.Items[0];
 
             _kinectSensor = KinectSensor.KinectSensors[0];
             _kinectSensor.Start();
@@ -469,34 +469,34 @@ namespace WpfApp3
 
         //}
 
-        private void BtnStartClick(object sender, RoutedEventArgs e)
-        {
-            if (listInstalledRecognizers.SelectedItem == null) return;
-            var rec = (RecognizerInfo)listInstalledRecognizers.SelectedItem;
-            DisableUI();
-            BuildSpeechEngine(rec);
-        }
+        //private void BtnStartClick(object sender, RoutedEventArgs e)
+        //{
+        //    if (listInstalledRecognizers.SelectedItem == null) return;
+        //    var rec = (RecognizerInfo)listInstalledRecognizers.SelectedItem;
+        //    DisableUI();
+        //    BuildSpeechEngine(rec);
+        //}
 
-        void DisableUI()
-        {
-            btnStart.IsEnabled = false;
-            btnStop.IsEnabled = true;
-            listInstalledRecognizers.IsEnabled = false;
-        }
+        //void DisableUI()
+        //{
+        //    btnStart.IsEnabled = false;
+        //    btnStop.IsEnabled = true;
+        //    listInstalledRecognizers.IsEnabled = false;
+        //}
 
-        private void BtnStopClick(object sender, RoutedEventArgs e)
-        {
-            _kinectSource.Stop();
-            _speechEngine.RecognizeAsyncStop();
-            ActivateUI();
-        }
+        //private void BtnStopClick(object sender, RoutedEventArgs e)
+        //{
+        //    _kinectSource.Stop();
+        //    _speechEngine.RecognizeAsyncStop();
+        //    ActivateUI();
+        //}
 
-        void ActivateUI()
-        {
-            btnStart.IsEnabled = true;
-            btnStop.IsEnabled = false;
-            listInstalledRecognizers.IsEnabled = true;
-        }
+        //void ActivateUI()
+        //{
+        //    btnStart.IsEnabled = true;
+        //    btnStop.IsEnabled = false;
+        //    listInstalledRecognizers.IsEnabled = true;
+        //}
 
         void BuildSpeechEngine(RecognizerInfo rec)
         {
@@ -561,12 +561,16 @@ EventHandler<SpeechRecognitionRejectedEventArgs>(_speechEngineSpeechRecognitionR
 
         void _speechEngineSpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
-            txtLastWord.Text = e.Result.Text;
+            //txtLastWord.Text = e.Result.Text;
+            if (e.Result.Text == "huh")
+            {
+                
+            }
         }
 
         void SpeechEngineSpeechHypothesized(object sender, SpeechHypothesizedEventArgs e)
         {
-            txtList.Text = string.Format("{0} - Confidence={1}\n{2}", e.Result.Text, e.Result.Confidence, txtList.Text);
+            //txtList.Text = string.Format("{0} - Confidence={1}\n{2}", e.Result.Text, e.Result.Confidence, txtList.Text);
         }
     }
 }
