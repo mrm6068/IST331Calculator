@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +12,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Kinect;
+using System.Speech.AudioFormat;
+using System.Speech.Recognition;
+using System.Speech;
+using System.IO;
+using System.Threading;
+using System.Collections;
 
 namespace WpfApp3
 {
@@ -424,6 +430,132 @@ namespace WpfApp3
                 textBoxDisplay.Text = Convert.ToString
                     ((Convert.ToDouble(textBoxDisplay.Text) / 1.609344));
             }
+        }
+
+
+        /********************************************************************
+         *******************************************************************/
+
+        KinectAudioSource _kinectSource;
+        KinectSensor _kinectSensor;
+        SpeechRecognitionEngine _speechEngine;
+        Stream _stream;
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        void WindowLoaded(object sender, RoutedEventArgs e)
+        {
+            listInstalledRecognizers.ItemsSource =
+            SpeechRecognitionEngine.InstalledRecognizers();
+            if (listInstalledRecognizers.Items.Count > 0)
+                listInstalledRecognizers.SelectedItem =
+                    listInstalledRecognizers.Items[0];
+
+            _kinectSensor = KinectSensor.KinectSensors[0];
+            _kinectSensor.Start();
+
+        }
+
+        private void BtnStartClick(object sender, RoutedEventArgs e)
+        {
+            if (listInstalledRecognizers.SelectedItem == null) return;
+            var rec = (RecognizerInfo)listInstalledRecognizers.SelectedItem;
+            DisableUI();
+            BuildSpeechEngine(rec);
+        }
+
+        void DisableUI()
+        {
+            btnStart.IsEnabled = false;
+            btnStop.IsEnabled = true;
+            listInstalledRecognizers.IsEnabled = false;
+        }
+
+        private void BtnStopClick(object sender, RoutedEventArgs e)
+        {
+            _kinectSource.Stop();
+            _speechEngine.RecognizeAsyncStop();
+            ActivateUI();
+        }
+
+        void ActivateUI()
+        {
+            btnStart.IsEnabled = true;
+            btnStop.IsEnabled = false;
+            listInstalledRecognizers.IsEnabled = true;
+        }
+
+        void BuildSpeechEngine(RecognizerInfo rec)
+        {
+            _speechEngine = new SpeechRecognitionEngine(rec.Id);
+
+            var choices = new Choices();
+            choices.Add("no");
+            choices.Add("yes");
+            choices.Add("reset");
+            choices.Add("word");
+            choices.Add("calculator");
+            choices.Add("my computer");
+            choices.Add("mspaint");
+            choices.Add("close");
+            choices.Add("Maybe");
+            choices.Add("What?");
+            choices.Add("huh");
+
+            var gb = new GrammarBuilder { Culture = rec.Culture };
+            gb.Append(choices);
+            var g = new Grammar(gb);
+
+            _speechEngine.LoadGrammar(g);
+            //recognized a word or words that may be a component of multiple
+            //complete phrases in a grammar.
+            _speechEngine.SpeechHypothesized += new
+    EventHandler<SpeechHypothesizedEventArgs>(SpeechEngineSpeechHypothesized);
+            //receives input that matches any of its loaded and enabled Grammar
+            //objects.
+            _speechEngine.SpeechRecognized += new
+  EventHandler<SpeechRecognizedEventArgs>(_speechEngineSpeechRecognized);
+            //receives input that does not match any of its loaded and enabled
+            //Grammar objects.
+            _speechEngine.SpeechRecognitionRejected += new
+EventHandler<SpeechRecognitionRejectedEventArgs>(_speechEngineSpeechRecognitionRejected);
+
+            //C# threads are MTA by default and calling RecognizeAsync in the same thread will cause an COM exception.
+            var t = new Thread(StartAudioStream);
+            t.Start();
+        }
+
+        void StartAudioStream()
+        {
+            _kinectSource = _kinectSensor.AudioSource;
+            //Important to turn this off for speech recognition
+            _kinectSource.AutomaticGainControlEnabled = false;
+            _kinectSource.EchoCancellationMode = EchoCancellationMode.None;
+            _stream = _kinectSource.Start();
+
+            _speechEngine.SetInputToAudioStream(_stream,
+                            new SpeechAudioFormatInfo(
+                                EncodingFormat.Pcm, 16000, 16, 1,
+                                32000, 2, null));
+
+            _speechEngine.RecognizeAsync(RecognizeMode.Multiple);
+        }
+
+        void _speechEngineSpeechRecognitionRejected(object sender, SpeechRecognitionRejectedEventArgs e)
+        {
+            Console.Write("\rSpeech Rejected: \t{0} \n", e.Result.Text);
+        }
+
+        void _speechEngineSpeechRecognized(object sender, SpeechRecognizedEventArgs e)
+        {
+            txtLastWord.Text = e.Result.Text;
+        }
+
+        void SpeechEngineSpeechHypothesized(object sender, SpeechHypothesizedEventArgs e)
+        {
+            txtList.Text = string.Format("{0} - Confidence={1}\n{2}", e.Result.Text, e.Result.Confidence, txtList.Text);
         }
     }
 }
