@@ -65,11 +65,11 @@ namespace WpfApp3
             buttonAdd.Tag = Operator.Plus;
             buttonEquals.Tag = Operator.Equals;
 
-            //listInstalledRecognizers.ItemsSource =
-            //        SpeechRecognitionEngine.InstalledRecognizers();
-            //if (listInstalledRecognizers.Items.Count > 0)
-            //    listInstalledRecognizers.SelectedItem =
-            //        listInstalledRecognizers.Items[0];
+            listInstalledRecognizers.ItemsSource =
+                    SpeechRecognitionEngine.InstalledRecognizers();
+            if (listInstalledRecognizers.Items.Count > 0)
+                listInstalledRecognizers.SelectedItem =
+                    listInstalledRecognizers.Items[0];
 
             _kinectSensor = KinectSensor.KinectSensors[0];
             _kinectSensor.Start();
@@ -450,7 +450,7 @@ namespace WpfApp3
         /********************************************************************
          *******************************************************************/
 
-        
+
         //public MainWindow()
         //{
         //    InitializeComponent();
@@ -458,62 +458,77 @@ namespace WpfApp3
 
         //void WindowLoaded(object sender, RoutedEventArgs e)
         //{
-            //listInstalledRecognizers.ItemsSource =
-            //SpeechRecognitionEngine.InstalledRecognizers();
-            //if (listInstalledRecognizers.Items.Count > 0)
-            //    listInstalledRecognizers.SelectedItem =
-            //        listInstalledRecognizers.Items[0];
+        //listInstalledRecognizers.ItemsSource =
+        //SpeechRecognitionEngine.InstalledRecognizers();
+        //if (listInstalledRecognizers.Items.Count > 0)
+        //    listInstalledRecognizers.SelectedItem =
+        //        listInstalledRecognizers.Items[0];
 
-            //_kinectSensor = KinectSensor.KinectSensors[0];
-            //_kinectSensor.Start();
+        //_kinectSensor = KinectSensor.KinectSensors[0];
+        //_kinectSensor.Start();
 
         //}
 
-        //private void BtnStartClick(object sender, RoutedEventArgs e)
-        //{
-        //    if (listInstalledRecognizers.SelectedItem == null) return;
-        //    var rec = (RecognizerInfo)listInstalledRecognizers.SelectedItem;
-        //    DisableUI();
-        //    BuildSpeechEngine(rec);
-        //}
+        private void buttonVoiceOn_Click(object sender, RoutedEventArgs e)
+        {
+            if (listInstalledRecognizers.SelectedItem == null) return;
+            var rec = (RecognizerInfo)listInstalledRecognizers.SelectedItem;
+            DisableUI();
+            BuildSpeechEngine(rec);
+        }
 
-        //void DisableUI()
-        //{
-        //    btnStart.IsEnabled = false;
-        //    btnStop.IsEnabled = true;
-        //    listInstalledRecognizers.IsEnabled = false;
-        //}
+        void DisableUI()
+        {
+            buttonVoiceOn.IsEnabled = false;
+            buttonVoiceOff.IsEnabled = true;
+            listInstalledRecognizers.IsEnabled = false;
+        }
 
-        //private void BtnStopClick(object sender, RoutedEventArgs e)
-        //{
-        //    _kinectSource.Stop();
-        //    _speechEngine.RecognizeAsyncStop();
-        //    ActivateUI();
-        //}
+        private void buttonVoiceOff_Click(object sender, RoutedEventArgs e)
+        {
+            _kinectSource.Stop();
+            _speechEngine.RecognizeAsyncStop();
+            ActivateUI();
+        }
 
-        //void ActivateUI()
-        //{
-        //    btnStart.IsEnabled = true;
-        //    btnStop.IsEnabled = false;
-        //    listInstalledRecognizers.IsEnabled = true;
-        //}
+        void ActivateUI()
+        {
+            buttonVoiceOn.IsEnabled = true;
+            buttonVoiceOff.IsEnabled = false;
+            listInstalledRecognizers.IsEnabled = true;
+        }
 
         void BuildSpeechEngine(RecognizerInfo rec)
         {
             _speechEngine = new SpeechRecognitionEngine(rec.Id);
 
             var choices = new Choices();
-            choices.Add("no");
-            choices.Add("yes");
-            choices.Add("reset");
-            choices.Add("word");
-            choices.Add("calculator");
-            choices.Add("my computer");
-            choices.Add("mspaint");
-            choices.Add("close");
-            choices.Add("Maybe");
-            choices.Add("What?");
-            choices.Add("huh");
+            choices.Add("minus");
+            choices.Add("plus");
+            choices.Add("times");
+            choices.Add("divided by");
+            choices.Add("over");
+            choices.Add("back");
+            choices.Add("clear");
+            choices.Add("equals");
+            choices.Add("point");
+            choices.Add("enter");
+            choices.Add("play");
+            choices.Add("zero");
+            choices.Add("one");
+            choices.Add("two");
+            choices.Add("three");
+            choices.Add("four");
+            choices.Add("five");
+            choices.Add("six");
+            choices.Add("seven");
+            choices.Add("eight");
+            choices.Add("nine");
+            choices.Add("set A");
+            choices.Add("set B");
+            choices.Add("get C");
+
+
 
             var gb = new GrammarBuilder { Culture = rec.Culture };
             gb.Append(choices);
@@ -562,15 +577,137 @@ EventHandler<SpeechRecognitionRejectedEventArgs>(_speechEngineSpeechRecognitionR
         void _speechEngineSpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             //txtLastWord.Text = e.Result.Text;
-            if (e.Result.Text == "huh")
+            switch(e.Result.Text)
             {
-                
+                case "play":
+                    buttonPlay_Click(new object(), new RoutedEventArgs());
+                    break;
+
+                case "enter":
+                    buttonEnter_Click(new object(), new RoutedEventArgs());
+                    break;
+
+                case "minus":
+                    ExecuteLastOperator(Operator.Minus);
+                    break;
+
+                case "plus":
+                    ExecuteLastOperator(Operator.Plus);
+                    break;
+
+                case "times":
+                    ExecuteLastOperator(Operator.Times);
+                    break;
+
+                case "divided by":
+                    ExecuteLastOperator(Operator.Divide);
+                    break;
+
+                case "over":
+                    ExecuteLastOperator(Operator.Divide);
+                    break;
+
+                case "back":
+                    buttonBack_Click(new object(), new RoutedEventArgs());
+                    break;
+
+                case "clear":
+                    buttonC_Click(new object(), new RoutedEventArgs());
+                    break;
+
+                case "equals":
+                    ExecuteLastOperator(Operator.Divide);
+                    break;
+
+                case "point":
+                    buttonDecimal_Click(new object(), new RoutedEventArgs());
+                    break;
+
+                case "zero":
+                    button0_Click(new object(), new RoutedEventArgs());
+                    break;
+
+                case "one":
+                    button1_Click(new object(), new RoutedEventArgs());
+                    break;
+
+                case "two":
+                    button2_Click(new object(), new RoutedEventArgs());
+                    break;
+
+                case "three":
+                    button3_Click(new object(), new RoutedEventArgs());
+                    break;
+
+                case "four":
+                    button4_Click(new object(), new RoutedEventArgs());
+                    break;
+
+                case "five":
+                    button5_Click(new object(), new RoutedEventArgs());
+                    break;
+
+                case "six":
+                    button6_Click(new object(), new RoutedEventArgs());
+                    break;
+
+                case "seven":
+                    button7_Click(new object(), new RoutedEventArgs());
+                    break;
+
+                case "eight":
+                    button8_Click(new object(), new RoutedEventArgs());
+                    break;
+
+                case "nine":
+                    button9_Click(new object(), new RoutedEventArgs());
+                    break;
+
+                case "set A":
+                    buttonSetA_Click(new object(), new RoutedEventArgs());
+                    break;
+
+                case "set B":
+                    buttonSetB_Click(new object(), new RoutedEventArgs());
+                    break;
+
+                case "get C":
+                    buttonGetC_Click(new object(), new RoutedEventArgs());
+                    break;
+
+
             }
+
         }
 
         void SpeechEngineSpeechHypothesized(object sender, SpeechHypothesizedEventArgs e)
         {
-            //txtList.Text = string.Format("{0} - Confidence={1}\n{2}", e.Result.Text, e.Result.Confidence, txtList.Text);
+            //string.Format("{0} - Confidence={1}\n{2}", e.Result.Text, e.Result.Confidence, txtList.Text);
+        }
+
+        private void buttonMul_Click(object sender, RoutedEventArgs e)
+        {
+            OnClickOperator(sender, e);
+        }
+
+        private void buttonDiv_Click(object sender, RoutedEventArgs e)
+        {
+            OnClickOperator(sender, e);
+        }
+
+        private void buttonAdd_Click(object sender, RoutedEventArgs e)
+        {
+            OnClickOperator(sender, e);
+        }
+
+        private void buttonSub_Click(object sender, RoutedEventArgs e)
+        {
+            OnClickOperator(sender, e);
+        }
+
+        private void buttonEquals_Click(object sender, RoutedEventArgs e)
+        {
+            OnClickOperator(sender, e);
         }
     }
 }
