@@ -225,6 +225,7 @@ namespace WpfApp3
             textBoxB.Clear();
             textBoxC.Clear();
             textBoxDisplay.Clear();
+            memTextBox.Clear();
         }
 
        
@@ -340,12 +341,12 @@ namespace WpfApp3
                         for (int i = 0; i < nums.Count; i++)
                         {
                             memTextBox.Text = Convert.ToString(nums[i]);
-                            await Task.Run(() => System.Threading.Thread.Sleep(1000));
+                            await Task.Run(() => System.Threading.Thread.Sleep(600));
 
                             if (i != nums.Count - 1)//No * after last num
                             {
                                 memTextBox.Text = Convert.ToString("*");
-                                await Task.Run(() => System.Threading.Thread.Sleep(700));
+                                await Task.Run(() => System.Threading.Thread.Sleep(400));
                             }
                         }
                         memTextBox.Text = Convert.ToString("Your Turn");
@@ -374,12 +375,12 @@ namespace WpfApp3
                 for (int i = 0; i < nums.Count; i++)
                 {
                     memTextBox.Text = Convert.ToString(nums[i]);
-                    await Task.Run(() => System.Threading.Thread.Sleep(1500));
+                    await Task.Run(() => System.Threading.Thread.Sleep(600));
 
                     if (i != nums.Count - 1)//No * after last num
                     {
                         memTextBox.Text = Convert.ToString("*");
-                        await Task.Run(() => System.Threading.Thread.Sleep(1000));
+                        await Task.Run(() => System.Threading.Thread.Sleep(400));
                     }
                  
                 }
@@ -510,6 +511,7 @@ namespace WpfApp3
             choices.Add("over");
             choices.Add("back");
             choices.Add("clear");
+            choices.Add("clear everything");
             choices.Add("equals");
             choices.Add("point");
             choices.Add("enter");
@@ -527,6 +529,15 @@ namespace WpfApp3
             choices.Add("set A");
             choices.Add("set B");
             choices.Add("get C");
+            choices.Add("miles to kilometers");
+            choices.Add("kilometers to miles");
+            choices.Add("inches to centimeters");
+            choices.Add("centimeters to inches");
+            choices.Add("fahrenheit to celsius");
+            choices.Add("celsius to fahrenheit");
+            choices.Add("area from radius");
+
+            choices.Add("exit calculator");
 
 
 
@@ -538,11 +549,11 @@ namespace WpfApp3
             //recognized a word or words that may be a component of multiple
             //complete phrases in a grammar.
             _speechEngine.SpeechHypothesized += new
-    EventHandler<SpeechHypothesizedEventArgs>(SpeechEngineSpeechHypothesized);
+                    EventHandler<SpeechHypothesizedEventArgs>(SpeechEngineSpeechHypothesized);
             //receives input that matches any of its loaded and enabled Grammar
             //objects.
             _speechEngine.SpeechRecognized += new
-  EventHandler<SpeechRecognizedEventArgs>(_speechEngineSpeechRecognized);
+                    EventHandler<SpeechRecognizedEventArgs>(_speechEngineSpeechRecognized);
             //receives input that does not match any of its loaded and enabled
             //Grammar objects.
             _speechEngine.SpeechRecognitionRejected += new
@@ -576,7 +587,6 @@ EventHandler<SpeechRecognitionRejectedEventArgs>(_speechEngineSpeechRecognitionR
 
         void _speechEngineSpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
-            //txtLastWord.Text = e.Result.Text;
             switch(e.Result.Text)
             {
                 case "play":
@@ -674,6 +684,40 @@ EventHandler<SpeechRecognitionRejectedEventArgs>(_speechEngineSpeechRecognitionR
                 case "get C":
                     buttonGetC_Click(new object(), new RoutedEventArgs());
                     break;
+
+                case "miles to kilometers":
+                    buttonMilesToKm_Click(new object(), new RoutedEventArgs());
+                    break;
+
+                case "kilometers to miles":
+                    buttonKmToMiles_Click(new object(), new RoutedEventArgs());
+                    break;
+
+                case "inches to centimeters":
+                    buttonInchToCm_Click(new object(), new RoutedEventArgs());
+                    break;
+
+                case "centimeters to inches":
+                    buttonCmToInch_Click(new object(), new RoutedEventArgs());
+                    break;
+
+                case "fahrenheit to celsius":
+                    buttonFToC_Click(new object(), new RoutedEventArgs());
+                    break;
+
+                case "celsius to fahrenheit":
+                    buttonCToF_Click(new object(), new RoutedEventArgs());
+                    break;
+
+                case "area from radius":
+                    buttonArea_Click(new object(), new RoutedEventArgs());
+                    break;
+
+                case "clear everything":
+                    buttonCE_Click(new object(), new RoutedEventArgs());
+                    break;
+
+                    //case "exit calculator":
 
 
             }
