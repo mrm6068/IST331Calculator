@@ -526,6 +526,17 @@ namespace WpfApp3
             choices.Add("seven");
             choices.Add("eight");
             choices.Add("nine");
+            choices.Add("ten");
+            choices.Add("eleven");
+            choices.Add("twelve");
+            choices.Add("thirteen");
+            choices.Add("forteen");
+            choices.Add("fifteen");
+            choices.Add("sixteen");
+            choices.Add("seventeen");
+            choices.Add("eighteen");
+            choices.Add("ninteen");
+            choices.Add("twenty");
             choices.Add("set A");
             choices.Add("set B");
             choices.Add("get C");
@@ -672,7 +683,50 @@ EventHandler<SpeechRecognitionRejectedEventArgs>(_speechEngineSpeechRecognitionR
                 case "nine":
                     button9_Click(new object(), new RoutedEventArgs());
                     break;
-
+                case "ten":
+                    button1_Click(new object(), new RoutedEventArgs());
+                    button0_Click(new object(), new RoutedEventArgs());
+                    break;
+                case "eleven":
+                    button1_Click(new object(), new RoutedEventArgs());
+                    button1_Click(new object(), new RoutedEventArgs());
+                    break;
+                case "twelve":
+                    button1_Click(new object(), new RoutedEventArgs());
+                    button2_Click(new object(), new RoutedEventArgs());
+                    break;
+                case "thirteen":
+                    button1_Click(new object(), new RoutedEventArgs());
+                    button3_Click(new object(), new RoutedEventArgs());
+                    break;
+                case "forteen":
+                    button1_Click(new object(), new RoutedEventArgs());
+                    button4_Click(new object(), new RoutedEventArgs());
+                    break;
+                case "fifteen":
+                    button1_Click(new object(), new RoutedEventArgs());
+                    button5_Click(new object(), new RoutedEventArgs());
+                    break;
+                case "sixteen":
+                    button1_Click(new object(), new RoutedEventArgs());
+                    button6_Click(new object(), new RoutedEventArgs());
+                    break;
+                case "seventeen":
+                    button1_Click(new object(), new RoutedEventArgs());
+                    button7_Click(new object(), new RoutedEventArgs());
+                    break;
+                case "eighteen":
+                    button1_Click(new object(), new RoutedEventArgs());
+                    button8_Click(new object(), new RoutedEventArgs());
+                    break;
+                case "ninteen":
+                    button1_Click(new object(), new RoutedEventArgs());
+                    button9_Click(new object(), new RoutedEventArgs());
+                    break;
+                case "twenty":
+                    button2_Click(new object(), new RoutedEventArgs());
+                    button0_Click(new object(), new RoutedEventArgs());
+                    break;
                 case "set A":
                     buttonSetA_Click(new object(), new RoutedEventArgs());
                     break;
