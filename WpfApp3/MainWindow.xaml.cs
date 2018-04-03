@@ -626,7 +626,7 @@ EventHandler<SpeechRecognitionRejectedEventArgs>(_speechEngineSpeechRecognitionR
                     break;
 
                 case "equals":
-                    ExecuteLastOperator(Operator.Divide);
+                    ExecuteLastOperator(Operator.Equals);
                     break;
 
                 case "point":
