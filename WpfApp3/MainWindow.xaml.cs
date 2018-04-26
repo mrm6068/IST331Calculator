@@ -830,7 +830,10 @@ EventHandler<SpeechRecognitionRejectedEventArgs>(_speechEngineSpeechRecognitionR
                 stop();
                 return;
             }
-
+            if(somethingRecorded)
+            {
+                File.Delete(audioFilePath);
+            }
             textBoxDisplay.Text = "Recording";
             IsRunning = true;
             recordingStartTime = DateTime.Now;
